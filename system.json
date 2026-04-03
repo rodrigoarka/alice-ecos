@@ -13,8 +13,8 @@
             "role": "Creator"
         }
     ],
-    "manifest": "https://raw.githubusercontent.com/seu-usuario/alice-ecos/main/system.json",
-    "download": "https://github.com/alice-ecos/alice-ecos/releases/latest/download/alice-ecos.zip",
+    "manifest": "https://raw.githubusercontent.com/rodrigoarka/alice-ecos/main/system.json",
+    "download": "https://github.com/rodrigoarka/alice-ecos/releases/latest/download/alice-ecos.zip",
     "esmodules": [
         "module/alice-ecos.mjs"
     ],
