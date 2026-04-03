@@ -2,7 +2,7 @@
     "id": "alice-ecos",
     "title": "Alice - Ecos no País das Maravilhas",
     "description": "Sistema de RPG baseado na Engine E.C.C.O.S. (Sobrevivência e Nonsense).",
-    "background": "systems/edvo/assets/imgs/thumbnail.png",
+    "background": "systems/alice-ecos/assets/imgs/thumbnail.png",
     "version": "0.1.1",
     "compatibility": {
         "minimum": 12,
