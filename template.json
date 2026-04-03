@@ -1,0 +1,65 @@
+{
+    "Actor": {
+        "types": [
+            "alice",
+            "espelhado"
+        ],
+        "templates": {},
+        "alice": {
+            "atributos": {
+                "forma": {
+                    "value": 1,
+                    "min": 0,
+                    "max": 4,
+                    "integridade": 0,
+                    "naipe_regente": ""
+                },
+                "logica": {
+                    "value": 1,
+                    "min": 0,
+                    "max": 4,
+                    "integridade": 0,
+                    "naipe_regente": ""
+                },
+                "devaneio": {
+                    "value": 1,
+                    "min": 0,
+                    "max": 4,
+                    "integridade": 0,
+                    "naipe_regente": ""
+                }
+            },
+            "detalhes": {
+                "nome_alice": "",
+                "aparencia_real": "",
+                "aparencia_alice": "",
+                "vivencia": "",
+                "biografia": "",
+                "anotacoes": ""
+            }
+        },
+        "espelhado": {
+            "presenca": 3,
+            "naipe_regente": "",
+            "aura_de_cena": "",
+            "gatilho_passivo": "",
+            "pacto": ""
+        }
+    },
+    "Item": {
+        "types": [
+            "conceito",
+            "item_bolso"
+        ],
+        "templates": {},
+        "conceito": {
+            "descricao": "",
+            "naipe": "",
+            "atributo_vinculado": "forma"
+        },
+        "item_bolso": {
+            "descricao": "",
+            "quantidade": 1
+        }
+    }
+}

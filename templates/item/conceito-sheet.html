@@ -1,0 +1,37 @@
+<form class="{{cssClass}} alice-item-sheet flexcol" autocomplete="off">
+  
+  <header class="item-header-zine flexrow">
+    
+    <div class="item-image-box">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    </div>
+    
+    <div class="item-details flexcol">
+      <input name="name" type="text" value="{{item.name}}" placeholder="Nome do Conceito / Item" class="item-name-input"/>
+      
+      <div class="item-field-row">
+        <label>Vínculo:</label>
+        <input type="text" name="system.atributo_vinculado" value="{{systemData.atributo_vinculado}}" placeholder="Ex: Forma, Lógica, Devaneio, Defeito..." />
+      </div>
+      
+      <div class="item-field-row">
+        <label>Naipe:</label>
+        <select name="system.naipe" class="item-naipe-select">
+          <option value="" {{#if (eq systemData.naipe "")}}selected{{/if}}>Nenhum (-)</option>
+          <option value="copas" {{#if (eq systemData.naipe "copas")}}selected{{/if}}>Copas ♥</option>
+          <option value="ouros" {{#if (eq systemData.naipe "ouros")}}selected{{/if}}>Ouros ♦</option>
+          <option value="paus" {{#if (eq systemData.naipe "paus")}}selected{{/if}}>Paus ♣</option>
+          <option value="espadas" {{#if (eq systemData.naipe "espadas")}}selected{{/if}}>Espadas ♠</option>
+        </select>
+      </div>
+    </div>
+
+  </header>
+
+  <section class="item-body-zine flexcol">
+    <h3 class="desc-title">As Entrelinhas (Descrição do Efeito)</h3>
+    
+    <textarea name="system.descricao" class="zine-textarea">{{systemData.descricao}}</textarea>
+  </section>
+  
+</form>

@@ -1,0 +1,336 @@
+<form class="{{cssClass}} alice-sheet flexcol" autocomplete="off">
+  <header class="sheet-header echos-layout">
+    <div class="polaroid-mirror real">
+      <img
+        class="profile-img"
+        src="{{actor.img}}"
+        data-edit="img"
+        title="{{actor.name}}"
+        alt="Retrato Real" />
+    </div>
+
+    <div class="header-group real-fields">
+      <label class="label-real">NOME REAL</label>
+      <input
+        name="name"
+        type="text"
+        value="{{actor.name}}"
+        placeholder="Nome no Mundo Real"
+        class="box-real" />
+
+      <label class="label-real">APARÊNCIA REAL</label>
+      <input
+        type="text"
+        name="system.detalhes.aparencia_real"
+        value="{{systemData.detalhes.aparencia_real}}"
+        placeholder="Um ser cinzento..."
+        class="box-real" />
+    </div>
+
+    <div class="header-group alice-fields">
+      <label class="label-alice">NOME DE ALICE</label>
+      <input
+        type="text"
+        name="system.detalhes.nome_alice"
+        value="{{systemData.detalhes.nome_alice}}"
+        placeholder="O Grito no Espelho"
+        class="box-alice" />
+
+      <label class="label-alice">APARÊNCIA DE ALICE</label>
+      <input
+        type="text"
+        name="system.detalhes.aparencia_alice"
+        value="{{systemData.detalhes.aparencia_alice}}"
+        placeholder="Cores que gritam..."
+        class="box-vivencia" />
+    </div>
+
+   
+  </div>   
+  
+  </header>
+  <header class="sheet-header echos-layout" style="grid-template-columns: 140px 1fr;
+    grid-template-areas: 'asd alicefield';">  
+    <div class="header-group alice-fields">
+      <label class="label-vivencia">VIVÊNCIA:</label>
+      <input type="text" name="system.detalhes.vivencia" value="{{systemData.detalhes.vivencia}}" placeholder="Ex: Governanta Vitoriana"
+          class="box-alice" /> 
+    </div>
+  </header>
+
+  <nav class="sheet-tabs tabs zine-nav" data-group="primary">
+    <a class="item tab-echo" data-tab="atributos">OS ECOS (Atributos)</a>
+    <a class="item tab-pocket" data-tab="inventario">ITEMS DE BOLSO</a>
+  </nav>
+
+  <section class="sheet-body">
+    <div
+      class="tab atributos ecos-trindade"
+      data-group="primary"
+      data-tab="atributos">
+      <div class="ecos-grid">
+        <div class="cartaforma ecos-card color-forma">
+          <h2 class="ecos-title title-forma rollable" data-attr="forma" style="cursor: pointer;" title="Rolar Forma!"> FORMA </h2>
+
+          <div class="secao-naipe" data-naipe="{{systemData.atributos.forma.naipe_regente}}">
+            <span class="label-naipe-title text-forma">NAIPE</span>
+            <div class="naipe-icons text-forma">
+              <i class="fas fa-heart naipe-copas"></i>
+              <i class="fas fa-diamond naipe-ouros"></i>
+              <i class="fas fa-club naipe-paus"></i>
+              <i class="fas fa-spade naipe-espadas"></i>
+              <i class="fas fa-question naipe-vazio"></i>
+            </div>
+            <select name="system.atributos.forma.naipe_regente" class="input-naipe text-forma">
+              <option value="" {{#if (eq systemData.atributos.forma.naipe_regente "")}}selected{{/if}}>-</option>
+              <option value="copas" {{#if (eq systemData.atributos.forma.naipe_regente "copas")}}selected{{/if}}>Copas ♥</option>
+              <option value="ouros" {{#if (eq systemData.atributos.forma.naipe_regente "ouros")}}selected{{/if}}>Ouros ♦</option>
+              <option value="paus" {{#if (eq systemData.atributos.forma.naipe_regente "paus")}}selected{{/if}}>Paus ♣</option>
+              <option value="espadas" {{#if (eq systemData.atributos.forma.naipe_regente "espadas")}}selected{{/if}}>Espadas ♠</option>
+            </select>
+          </div>
+
+          <div class="secao-nivel color-forma">
+            <input
+              type="number"
+              name="system.atributos.forma.value"
+              value="{{systemData.atributos.forma.value}}"
+              min="0"
+              max="7"
+              class="nivel-contador text-forma" />
+          </div>
+
+          <div class="secao-conceitos text-forma flexrow">
+            <div class="vertical-label color-forma">CONCEITOS</div>
+            <div class="box-conceitos">
+            {{#each conceitosForma as |item id|}}
+            <div class="item conceito-item flexcol" data-item-id="{{item._id}}">
+              <div class="item-header flexrow">
+                <span class="item-name" title="Clique para ler as entrelinhas..."><i class="fas fa-caret-right"></i> {{item.name}}</span>
+                <div class="item-controls">
+                  <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                  <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                </div>
+              </div>
+              <div class="item-summary" style="display: none;">
+                {{item.system.descricao}}
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          </div>
+
+          <div class="secao-integridade text-forma">
+            <div class="vertical-label-integridade color-forma">
+              INTEGRIDADE
+            </div>
+            <input
+              type="number"
+              name="system.atributos.forma.integridade"
+              value="{{systemData.atributos.forma.integridade}}"
+              min="0"
+              max="3"
+              class="integridade-contador text-forma" />
+          </div>
+        </div>
+
+        <div class="cartalogica ecos-card color-logica">
+          <h2 class="ecos-title title-logica rollable" data-attr="logica" style="cursor: pointer;" title="Rolar Lógica!"> LÓGICA </h2>
+
+          <div class="secao-naipe" data-naipe="{{systemData.atributos.logica.naipe_regente}}">
+            <span class="label-naipe-title text-logica">NAIPE</span>
+            <div class="naipe-icons text-logica">
+              <i class="fas fa-heart naipe-copas"></i>
+              <i class="fas fa-diamond naipe-ouros"></i>
+              <i class="fas fa-club naipe-paus"></i>
+              <i class="fas fa-spade naipe-espadas"></i>
+              <i class="fas fa-question naipe-vazio"></i>
+            </div>
+            <select name="system.atributos.logica.naipe_regente" class="input-naipe text-logica">
+              <option value="" {{#if (eq systemData.atributos.logica.naipe_regente "")}}selected{{/if}}>-</option>
+              <option value="copas" {{#if (eq systemData.atributos.logica.naipe_regente "copas")}}selected{{/if}}>Copas ♥</option>
+              <option value="ouros" {{#if (eq systemData.atributos.logica.naipe_regente "ouros")}}selected{{/if}}>Ouros ♦</option>
+              <option value="paus" {{#if (eq systemData.atributos.logica.naipe_regente "paus")}}selected{{/if}}>Paus ♣</option>
+              <option value="espadas" {{#if (eq systemData.atributos.logica.naipe_regente "espadas")}}selected{{/if}}>Espadas ♠</option>
+            </select>
+          </div>
+
+          <div class="secao-nivel color-logica">
+            <input
+              type="number"
+              name="system.atributos.logica.value"
+              value="{{systemData.atributos.logica.value}}"
+              min="0"
+              max="7"
+              class="nivel-contador text-logica" />
+          </div>
+
+          <div class="secao-conceitos text-logica flexrow">
+            <div class="vertical-label color-logica">CONCEITOS</div>
+            <div class="box-conceitos">
+            {{#each conceitosLogica as |item id|}}
+            <div class="item conceito-item flexcol" data-item-id="{{item._id}}">
+              <div class="item-header flexrow">
+                <span class="item-name" title="Clique para ler as entrelinhas..."><i class="fas fa-caret-right"></i> {{item.name}}</span>
+                <div class="item-controls">
+                  <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                  <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                </div>
+              </div>
+              <div class="item-summary" style="display: none;">
+                {{item.system.descricao}}
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          </div>
+
+          <div class="secao-integridade text-logica">
+            <div class="vertical-label-integridade color-logica">
+              INTEGRIDADE
+            </div>
+            <input
+              type="number"
+              name="system.atributos.logica.integridade"
+              value="{{systemData.atributos.logica.integridade}}"
+              min="0"
+              max="3"
+              class="integridade-contador text-logica" />
+          </div>
+        </div>
+
+        <div class="cartadevaneio ecos-card color-devaneio">
+          <h2 class="ecos-title title-devaneio rollable" data-attr="devaneio" style="cursor: pointer;" title="Rolar Devaneio!"> DEVANEIO </h2>
+
+         <div class="secao-naipe" data-naipe="{{systemData.atributos.devaneio.naipe_regente}}">
+            <span class="label-naipe-title text-devaneio">NAIPE</span>
+            <div class="naipe-icons text-devaneio">
+              <i class="fas fa-heart naipe-copas"></i>
+              <i class="fas fa-diamond naipe-ouros"></i>
+              <i class="fas fa-club naipe-paus"></i>
+              <i class="fas fa-spade naipe-espadas"></i>
+              <i class="fas fa-question naipe-vazio"></i>
+            </div>
+            <select name="system.atributos.devaneio.naipe_regente" class="input-naipe text-devaneio">
+              <option value="" {{#if (eq systemData.atributos.devaneio.naipe_regente "")}}selected{{/if}}>-</option>
+              <option value="copas" {{#if (eq systemData.atributos.devaneio.naipe_regente "copas")}}selected{{/if}}>Copas ♥</option>
+              <option value="ouros" {{#if (eq systemData.atributos.devaneio.naipe_regente "ouros")}}selected{{/if}}>Ouros ♦</option>
+              <option value="paus" {{#if (eq systemData.atributos.devaneio.naipe_regente "paus")}}selected{{/if}}>Paus ♣</option>
+              <option value="espadas" {{#if (eq systemData.atributos.devaneio.naipe_regente "espadas")}}selected{{/if}}>Espadas ♠</option>
+            </select>
+          </div>
+
+          <div class="secao-nivel color-devaneio">
+            <input
+              type="number"
+              name="system.atributos.devaneio.value"
+              value="{{systemData.atributos.devaneio.value}}"
+              min="0"
+              max="7"
+              class="nivel-contador text-devaneio" />
+          </div>
+
+          <div class="secao-conceitos text-devaneio flexrow">
+            <div class="vertical-label color-devaneio">CONCEITOS</div>
+            <div class="box-conceitos">
+            {{#each conceitosDevaneio as |item id|}}
+            <div class="item conceito-item flexcol" data-item-id="{{item._id}}">
+              <div class="item-header flexrow">
+                <span class="item-name" title="Clique para ler as entrelinhas..."><i class="fas fa-caret-right"></i> {{item.name}}</span>
+                <div class="item-controls">
+                  <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                  <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                </div>
+              </div>
+              <div class="item-summary" style="display: none;">
+                {{item.system.descricao}}
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          </div>
+
+          <div class="secao-integridade text-devaneio">
+            <div class="vertical-label-integridade color-devaneio">
+              INTEGRIDADE
+            </div>
+            <input
+              type="number"
+              name="system.atributos.devaneio.integridade"
+              value="{{systemData.atributos.devaneio.integridade}}"
+              min="0"
+              max="3"
+              class="integridade-contador text-devaneio" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="tab inventario pocket-layout" data-group="primary" data-tab="inventario">
+      
+      <div class="pocket-grid">
+        
+        <div class="lists-column">
+          
+          <div class="zine-box color-devaneio">
+            <h3 class="box-title">DEFEITOS (Compulsões)</h3>
+            <div class="item-container box-defeitos">
+           {{#each conceitosDefeitos as |item id|}}
+            <div class="item conceito-item flexcol" data-item-id="{{item._id}}">
+              <div class="item-header flexrow">
+                <span class="item-name" title="Clique para ler as entrelinhas..."><i class="fas fa-caret-right"></i> {{item.name}}</span>
+                <div class="item-controls">
+                  <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                  <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                </div>
+              </div>
+              <div class="item-summary" style="display: none;">
+                {{item.system.descricao}}
+              </div>
+            </div>
+            {{/each}}
+            </div>
+          </div>
+
+          <div class="zine-box color-logica">
+            <h3 class="box-title">ITENS DE BOLSO</h3>
+            <div class="item-container box-bolsos">
+              {{#each itensDeBolso as |item id|}}
+              <div class="item conceito-item flexcol" data-item-id="{{item._id}}">
+                <div class="item-header flexrow">
+                  <span class="item-name"><i class="fas fa-box"></i> {{item.name}}</span>
+                  <div class="item-controls">
+                    <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
+                    <a class="item-control item-delete"><i class="fas fa-trash"></i></a>
+                  </div>
+                </div>
+                <div class="item-summary" style="display: none;">{{item.system.descricao}}</div>
+              </div>
+              {{/each}}
+            </div>
+          </div>
+
+        </div>
+
+        <div class="texts-column">
+          
+          <div class="zine-box color-forma">
+            <h3 class="box-title">BIOGRAFIA</h3>
+            <textarea name="system.detalhes.biografia" class="zine-textarea">{{systemData.detalhes.biografia}}</textarea>
+          </div>
+
+          <div class="zine-box">
+            <h3 class="box-title" style="color: #fff; border-bottom: 2px solid #fff;">ANOTAÇÕES</h3>
+            <textarea name="system.detalhes.anotacoes" class="zine-textarea">{{systemData.detalhes.anotacoes}}</textarea>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="spray-bar-right"></div>
+</form>

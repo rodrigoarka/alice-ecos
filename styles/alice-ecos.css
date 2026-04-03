@@ -1,0 +1,978 @@
+/* ==========================================================
+   ALICE - ECOS V3 | MANIFESTO VISUAL ZINE PUNK GÓTICO TROPICAL
+   ========================================================== */
+
+/* Fontes Mágicas do Google */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@700;900&display=swap');
+
+.alice-sheet {
+
+    background: #1b1a3a;
+    color: #f1f1f1;
+}
+
+.standard-form .form-group>label {
+    flex: 1;
+    color: #f1f1f1;
+
+}
+
+/* FUNDO GERAL (O Roxo Profundo) */
+.alice-ecos.alice-sheet {
+    background: #1a0a29;
+    /* Roxo Escuro Profundo */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #333;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    /* Importante para a barra de spray */
+}
+
+/* 1. CABEÇALHO SUPERIOR (ECHOS-LAYOUT GRID) */
+.alice-ecos .sheet-header.echos-layout {
+    display: grid;
+    grid-template-columns: 140px 1fr 1fr;
+    grid-template-areas: "portrait realfield alicefield";
+    gap: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #555;
+    position: relative;
+}
+
+/* Moldura Polaroid Gótica Real (Polaroid/Fita Amarela) */
+.alice-ecos .polaroid-mirror {
+    grid-area: portrait;
+    width: 140px;
+    height: 180px;
+    background: #fff;
+    padding: 10px 10px 30px 10px;
+    /* Borda polaroid */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* A fita amarela em cima do Polaroid */
+.alice-ecos .polaroid-mirror::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    width: 100px;
+    height: 30px;
+    background: rgba(255, 225, 53, 0.6);
+    /* Amarelo Neon Opaco */
+    border: 1px dashed rgba(255, 225, 53, 0.8);
+    transform: rotate(-10deg);
+    pointer-events: none;
+}
+
+.alice-ecos .profile-img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    border: none !important;
+    filter: sepia(0.2) contrast(1.1);
+}
+
+/* Campos de Texto Góticos (Nomes e Aparências) */
+.alice-ecos .header-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alice-ecos .header-group.real-fields {
+    grid-area: realfield;
+}
+
+.alice-ecos .header-group.alice-fields {
+    grid-area: alicefield;
+}
+
+.alice-ecos label.label-real {
+    color: #ffe135;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+
+.alice-ecos label.label-alice {
+    color: #00ffff;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+
+.alice-ecos label.label-vivencia {
+    color: #ff007f;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+
+.alice-ecos .box-real,
+.alice-ecos .box-alice,
+.alice-ecos .box-vivencia {
+    background: #fff !important;
+    border: 2px solid rgba(255, 225, 53, 0.5) !important;
+    color: #1a0a29 !important;
+    padding: 10px;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+}
+
+.alice-ecos .box-alice {
+    border-color: rgba(0, 255, 255, 0.5) !important;
+}
+
+.alice-ecos .box-vivencia {
+    border-color: rgba(255, 0, 127, 0.5) !important;
+}
+
+/* Logotipo */
+.alice-ecos .logotipo-box {
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alice-ecos .logotipo-box img {
+    width: 100%;
+    height: auto;
+}
+
+/* 2. NAVEGAÇÃO PUNK */
+.alice-ecos .zine-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 2px solid #555;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+
+.alice-ecos .tab-echo,
+.alice-ecos .tab-pocket {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.alice-ecos .tab-echo.active {
+    color: #ffe135;
+    text-shadow: 0 0 10px #ffe135;
+}
+
+.alice-ecos .tab-pocket.active {
+    color: #ff007f;
+    text-shadow: 0 0 10px #ff007f;
+}
+
+/* 3. OS ECOS (As Três Cartas Desenhadas em GRID) */
+.alice-ecos .ecos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo do Cartão base de baralho Zine */
+.alice-ecos .ecos-card {
+    background: transparent;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* pseudoelemento para as bordas desenhadas (Efeito Spray/Drawn) */
+.alice-ecos .ecos-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px solid;
+    border-radius: inherit;
+    pointer-events: none;
+    border-image: linear-gradient(135deg, currentcolor, transparent, currentcolor) 1 / 4px / 0 round;
+}
+
+.alice-ecos .ecos-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 15px;
+    padding: 5px;
+    background: transparent;
+    color: currentColor;
+    border-radius: 4px;
+    position: relative;
+}
+
+/* Cadeado Mágico (Puro CSS) */
+.alice-ecos .cadeado {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 25px;
+    height: 35px;
+    border: 4px solid currentcolor;
+    border-radius: 4px;
+}
+
+.alice-ecos .cadeado::after {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 10px;
+    background: currentcolor;
+    border-radius: 50% 50% 0 0;
+}
+
+/* Seção Naipe */
+.alice-ecos .secao-naipe {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.alice-ecos .label-naipe-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+.alice-ecos .naipe-icons {
+    font-size: 1.2em;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.alice-ecos .input-naipe {
+    background: transparent !important;
+    border: none !important;
+    color: currentcolor !important;
+    text-align: center;
+    font-family: 'Special Elite', monospace;
+    width: 60%;
+}
+
+/* Seção Nível (Mudar para círculos clicáveis depois) */
+.alice-ecos .secao-nivel {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px dashed currentcolor;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.alice-ecos .nivel-contador {
+    background: transparent !important;
+    border: none !important;
+    color: #fff !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 2em;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+}
+
+/* Seção Conceitos (Rótulo Vertical) */
+.alice-ecos .secao-conceitos {
+    margin-bottom: 20px;
+}
+
+.alice-ecos .vertical-label {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    color: currentcolor;
+    margin-right: 0;
+    flex: none;
+}
+
+.alice-ecos .box-conceitos {
+    flex: 1;
+    background: #fff;
+    height: 200px;
+    border: 2px solid currentcolor;
+    border-radius: 4px;
+}
+
+/* Seção Integridade (Base e Rótulo) */
+.alice-ecos .secao-integridade {
+    margin-top: auto;
+    position: relative;
+    text-align: center;
+}
+
+.alice-ecos .vertical-label-integridade {
+    position: absolute;
+    top: -20px;
+    left: 10px;
+    background: transparent;
+    color: #1a0a29;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.alice-ecos .integridade-contador {
+    background: rgba(255, 225, 53, 0.1) !important;
+    border: 2px solid currentcolor !important;
+    color: currentcolor !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 1.5em;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+/* 4. CORES DE NEON GÓTICO TROPICAL */
+/* Color Forma (Amarelo Neon) */
+.alice-ecos .color-forma,
+.alice-ecos .text-forma {
+    color: #ffe135;
+    border-color: #ffe135;
+}
+
+.alice-ecos .ecos-card.color-forma::before {
+    border-image: linear-gradient(135deg, #ffe135, transparent, #ffe135) 1 / 4px / 0 round;
+}
+
+/* Color Lógica (Ciano Neon) */
+.alice-ecos .color-logica,
+.alice-ecos .text-logica {
+    color: #00ffff;
+    border-color: #00ffff;
+}
+
+.alice-ecos .ecos-card.color-logica::before {
+    border-image: linear-gradient(135deg, #00ffff, transparent, #00ffff) 1 / 4px / 0 round;
+}
+
+/* Color Devaneio (Rosa Choque Neon) */
+.alice-ecos .color-devaneio,
+.alice-ecos .text-devaneio {
+    color: #ff007f;
+    border-color: #ff007f;
+}
+
+.alice-ecos .ecos-card.color-devaneio::before {
+    border-image: linear-gradient(135deg, #ff007f, transparent, #ff007f) 1 / 4px / 0 round;
+}
+
+/* A BARRA DE SPRAY NA EXTREMA DIREITA (CSS MÁGICO!) */
+.alice-ecos .spray-bar-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 100%;
+    pointer-events: none;
+
+    /* Efeito de Spray CSS: degradê radial + degradê de neon */
+    background:
+        radial-gradient(circle at right, transparent, rgba(255, 225, 53, 0.05) 50%, rgba(255, 225, 53, 0.1) 80%, rgba(255, 225, 53, 0.2) 100%),
+        linear-gradient(to bottom, #ffe135, transparent 5%, #00ffff 25%, #ff007f 60%, transparent 95%);
+
+    filter: blur(2px);
+    /* Desfoca para dar o efeito de spray */
+    border-left: 2px solid transparent;
+    box-shadow: -5px 0 10px rgba(255, 225, 53, 0.1);
+}
+
+/* Seção Naipe & Ícones Dinâmicos */
+.alice-ecos .secao-naipe {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.alice-ecos .label-naipe-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+/* Oculta todos os ícones por padrão */
+.alice-ecos .naipe-icons i {
+    display: none;
+    font-size: 1.5em;
+    margin: 5px 0;
+}
+
+/* CSS Mágico: Exibe apenas o ícone correspondente ao data-naipe */
+.alice-ecos .secao-naipe[data-naipe="copas"] .naipe-copas {
+    display: inline-block;
+}
+
+.alice-ecos .secao-naipe[data-naipe="ouros"] .naipe-ouros {
+    display: inline-block;
+}
+
+.alice-ecos .secao-naipe[data-naipe="paus"] .naipe-paus {
+    display: inline-block;
+}
+
+.alice-ecos .secao-naipe[data-naipe="espadas"] .naipe-espadas {
+    display: inline-block;
+}
+
+.alice-ecos .secao-naipe[data-naipe=""] .naipe-vazio {
+    display: inline-block;
+    opacity: 0.3;
+}
+
+/* Estilo do Menu Dropdown (Para parecer texto simples) */
+.alice-ecos select {
+    background: transparent !important;
+    border: none !important;
+    color: currentcolor !important;
+    text-align: center;
+    font-family: 'Special Elite', monospace;
+    width: 80%;
+    cursor: pointer;
+    appearance: none;
+    /* Remove a setinha nativa do Windows/Mac */
+    -webkit-appearance: none;
+    border-bottom: 1px dotted currentcolor !important;
+    padding-bottom: 3px;
+}
+
+/* Fundo do menu aberto para não ficar invisível */
+.alice-ecos select.input-naipe option {
+    background: #1a0a29;
+    color: #fff;
+}
+
+/* Caixa Branca dos Conceitos */
+.alice-ecos .box-conceitos {
+    flex: 1;
+    background: #fff;
+    height: 200px;
+    border: 2px solid currentcolor;
+    border-radius: 4px;
+    padding: 5px;
+    overflow-y: auto;
+    /* Cria barra de rolagem se encher */
+}
+
+/* O Item (Conceito) dentro da caixa */
+.alice-ecos .conceito-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dotted currentcolor;
+    padding: 4px 2px;
+    color: #1a0a29;
+    /* Letra escura para contrastar no branco */
+    font-family: 'Special Elite', monospace;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.alice-ecos .conceito-item .item-name {
+    flex: 1;
+    cursor: pointer;
+}
+
+.alice-ecos .conceito-item .item-controls {
+    flex: 0 0 35px;
+    text-align: right;
+}
+
+.alice-ecos .conceito-item .item-controls a {
+    color: #1a0a29;
+    margin-left: 5px;
+    opacity: 0.6;
+}
+
+.alice-ecos .conceito-item .item-controls a:hover {
+    opacity: 1;
+    color: #ff007f;
+}
+
+/* ==========================================================
+   ALICE - ECOS | MENSAGENS NO CHAT (DADOS E RESULTADOS)
+   ========================================================== */
+
+.alice-chat-card {
+    background: #1a0a29;
+    border: 2px solid #555;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5px;
+}
+
+/* Colorindo as bordas do chat baseadas no Atributo */
+.alice-chat-card.color-forma {
+    border-color: #ffe135;
+    box-shadow: inset 0 0 10px rgba(255, 225, 53, 0.2);
+}
+
+.alice-chat-card.color-logica {
+    border-color: #00ffff;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.alice-chat-card.color-devaneio {
+    border-color: #ff007f;
+    box-shadow: inset 0 0 10px rgba(255, 0, 127, 0.2);
+}
+
+.alice-chat-card .chat-header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-bottom: 1px dashed #555;
+    text-align: center;
+}
+
+.alice-chat-card .chat-header h3 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-transform: uppercase;
+}
+
+.alice-chat-card .chat-stats {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.85em;
+    margin-top: 5px;
+    color: #ccc;
+}
+
+/* A Área onde os dados caem */
+.alice-chat-card .chat-dados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 10px;
+}
+
+/* O Estilo de cada Dado d6 no Chat */
+.alice-die {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: #333;
+    border-radius: 6px;
+    font-weight: 900;
+    font-size: 1.2em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+}
+
+.alice-die.dado-acerto {
+    background: #00ff00;
+    color: #000;
+    border-color: #fff;
+    text-shadow: 0 0 5px #fff;
+}
+
+/* Verde brilhante (5,6) */
+.alice-die.dado-custo {
+    background: #ffe135;
+    color: #000;
+}
+
+/* Amarelo (4) */
+.alice-die.dado-falha {
+    background: #8b0000;
+    color: #fff;
+}
+
+/* Vermelho escuro (1) */
+.alice-die.dado-neutro {
+    background: #555;
+    color: #aaa;
+}
+
+/* Cinza (2,3) */
+
+/* A Faixa de Julgamento Final */
+.alice-chat-card .chat-resultado {
+    padding: 10px;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.chat-crit-fail {
+    background: #8b0000;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+}
+
+.chat-crit-success {
+    background: #ff007f;
+    color: #fff;
+    box-shadow: 0 -5px 15px rgba(255, 0, 127, 0.5);
+}
+
+.chat-success {
+    background: #00ff00;
+    color: #000;
+}
+
+.chat-costly {
+    background: #ffe135;
+    color: #000;
+}
+
+.chat-fail {
+    background: #333;
+    color: #aaa;
+}
+
+/* ==========================================================
+   ALICE - ECOS | JANELAS DE DIÁLOGO (POP-UPS PUNK)
+   ========================================================== */
+
+
+/* Fundo das caixas de diálogo (O pergaminho do Coelho Branco) */
+.alice-ecos.sheet .window-content,
+.dialog .window-content {
+    background: #1a0a29;
+    /* Roxo Profundo */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid #ff007f;
+    /* Borda Rosa Choque */
+    box-shadow: inset 0 0 20px rgba(255, 0, 127, 0.1);
+}
+
+/* Container dos botões */
+.dialog .dialog-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 15px 5px 5px 5px;
+    border-top: 2px dashed #00ffff;
+    /* Linha tracejada Ciano Neon */
+    margin-top: 10px;
+}
+
+/* O Botão Padrão (Estilo Neon Amarelo) */
+.dialog .dialog-button {
+    background: rgba(255, 225, 53, 0.05);
+    border: 2px solid #ffe135;
+    /* Amarelo Neon */
+    color: #ffe135;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(255, 225, 53, 0.2);
+}
+
+/* O Efeito de Hover (Quando passa o mouse, ele acende!) */
+.dialog .dialog-button:hover,
+.dialog .dialog-button:focus {
+    background: #ffe135;
+    color: #1a0a29;
+    /* Texto escuro para dar contraste */
+    box-shadow: 0 0 15px #ffe135, inset 0 0 10px rgba(255, 255, 255, 0.5);
+    text-shadow: none;
+    outline: none;
+}
+
+/* ==========================================================
+   VARIANTE PARA BOTÕES DE CANCELAR / APAGAR
+   ========================================================== */
+/* Se o botão tiver a classe "nao" (como no nosso aviso de deletar) */
+.dialog .dialog-button.nao {
+    border-color: #ff007f;
+    /* Rosa Choque */
+    color: #ff007f;
+    background: rgba(255, 0, 127, 0.05);
+    box-shadow: 0 0 5px rgba(255, 0, 127, 0.2);
+}
+
+.dialog .dialog-buttons button.default,
+.dialog .dialog-button.nao:hover,
+.dialog .dialog-button.nao:focus {
+    background: #ff007f;
+    color: #fff;
+    box-shadow: 0 0 15px #ff007f;
+}
+
+/* O Item (Conceito) dentro da caixa */
+.alice-ecos .conceito-item {
+    display: flex;
+    flex-direction: column;
+    /* Alterado para permitir que a descrição desça */
+    border-bottom: 1px dotted currentcolor;
+    padding: 4px 2px;
+    color: #1a0a29;
+}
+
+/* O Cabeçalho do Item (Nome e Botões) */
+.alice-ecos .conceito-item .item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.alice-ecos .conceito-item .item-name {
+    flex: 1;
+    cursor: pointer;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.85em;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.alice-ecos .conceito-item .item-name:hover {
+    color: #ff007f;
+    /* Brilha rosa ao passar o mouse */
+}
+
+.alice-ecos .conceito-item .item-controls {
+    flex: 0 0 35px;
+    text-align: right;
+}
+
+.alice-ecos .conceito-item .item-controls a {
+    color: #1a0a29;
+    margin-left: 5px;
+    opacity: 0.6;
+}
+
+.alice-ecos .conceito-item .item-controls a:hover {
+    opacity: 1;
+    color: #ff007f;
+}
+
+/* A Gaveta Oculta (A Descrição do Poder) */
+.alice-ecos .conceito-item .item-summary {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8em;
+    font-weight: normal;
+    color: #333;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    margin-top: 5px;
+    border-left: 3px solid currentcolor;
+    /* Usa a cor do atributo (Amarelo, Ciano, Rosa) */
+    border-radius: 0 4px 4px 0;
+    white-space: pre-wrap;
+    /* Mantém as quebras de linha que você digitou */
+}
+
+/* Layout da Segunda Aba */
+.alice-ecos .pocket-layout {
+    padding: 15px;
+}
+
+.alice-ecos .pocket-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Caixas de Estilo Zine */
+.alice-ecos .zine-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid #555;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.alice-ecos .box-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid currentcolor;
+    padding-bottom: 5px;
+}
+
+/* Área de Texto Estilo Máquina de Escrever */
+.alice-ecos .zine-textarea {
+    width: 100%;
+    height: 200px;
+    background: #fff !important;
+    color: #1a0a29 !important;
+    font-family: 'Special Elite', monospace;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+/* Altura mínima para as caixas de itens para facilitar o drag-drop */
+.alice-ecos .item-container {
+    min-height: 150px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px dashed #444;
+    padding: 5px;
+}
+
+/* ==========================================================
+   ALICE - ECOS | FICHA DE CADASTRO DE ITEM (CONCEITOS)
+   ========================================================== */
+
+/* Fundo da Janela do Item */
+.alice-ecos.sheet.item {
+    background: #1a0a29;
+    color: #fff;
+    border: 2px solid #00ffff;
+    /* Borda Ciano */
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+/* Cabeçalho do Item */
+.alice-item-sheet .item-header-zine {
+    display: flex;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 2px dashed #ff007f;
+    /* Linha tracejada Rosa */
+    align-items: center;
+}
+
+/* Caixa da Imagem */
+.alice-item-sheet .item-image-box {
+    flex: 0 0 100px;
+    height: 100px;
+    border: 3px solid #ffe135;
+    /* Borda Amarela */
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.alice-item-sheet .item-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Detalhes de Texto */
+.alice-item-sheet .item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Nome do Item Gigante e Neon */
+.alice-item-sheet .item-name-input {
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    font-weight: bold;
+    color: #00ffff;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #ff007f !important;
+    padding: 0 0 5px 0 !important;
+    border-radius: 0 !important;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.alice-item-sheet .item-name-input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Linhas de Vínculo e Naipe */
+.alice-item-sheet .item-field-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alice-item-sheet .item-field-row label {
+    color: #ffe135;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    flex: 0 0 70px;
+}
+
+.alice-item-sheet .item-field-row input,
+.alice-item-sheet .item-field-row select {
+    flex: 1;
+    background: #fff !important;
+    color: #1a0a29 !important;
+    font-family: 'Special Elite', monospace;
+    font-weight: bold;
+    border: 2px solid #00ffff !important;
+    border-radius: 4px !important;
+    padding: 5px !important;
+}
+
+/* Corpo e Descrição */
+.alice-item-sheet .item-body-zine {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.alice-item-sheet .desc-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #ff007f;
+    border-bottom: 1px solid #ffe135;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* O textarea usa a mesma classe .zine-textarea que criamos antes, 
+   então ele automaticamente vai ter aquele fundo branco de máquina de escrever! */
+.alice-item-sheet .zine-textarea {
+    flex: 1;
+    /* Faz a área de texto esticar até o fim da janela */
+    min-height: 200px;
+}
+
+select {
+    height: calc(var(--form-field-height) + 1px);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid var(--color-border-light-tertiary);
+    border-radius: 3px;
+    padding: 0 3px;
+    text-overflow: ellipsis;
+    font-family: inherit;
+    font-size: inherit;
+    /* --input-placeholder-color: aqua; */
+}
