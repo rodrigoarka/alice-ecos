@@ -23,7 +23,15 @@
     "styles": [
         "styles/alice-ecos.css"
     ],
-    "packs": [],
+    "packs": [
+        {
+            "name": "cartas-de-conceito",
+            "label": "Cartas de conceito (Itens Oficiais)",
+            "path": "packs/cartas-de-conceito",
+            "type": "Item",
+            "system": "alice-ecos"
+        }
+    ],
     "languages": [
         {
             "lang": "pt-BR",

@@ -1,0 +1,47 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+    <header class="espelhado-header flexrow">
+        <div class="espelhado-portrait">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+        </div>
+    </header>
+    <div class="espelhado-atributos flexcol">
+        <div class="espelhado-info flexcol">
+          <input name="name" type="text" value="{{actor.name}}" placeholder="Nome do Pesadelo" class="espelhado-name"/>
+        </div>
+      
+      <div class="atributo-linha" style="border-color: #ff007f; color: #ff007f;">
+        <span>🔥 PRESENÇA</span>
+        <input type="number" name="system.atributos.presenca" value="{{systemData.atributos.presenca}}" min="0" max="10" style="color: #ff007f;"/>
+      </div>
+
+      <div class="stat-box" style="margin-top: 10px;">
+        <label style="color: #00ffff;">Naipe Regente</label>
+        <select name="system.atributos.naipe_regente" class="espelhado-naipe">
+          <option value="" {{#if (eq systemData.atributos.naipe_regente "")}}selected{{/if}}>-</option>
+          <option value="copas" {{#if (eq systemData.atributos.naipe_regente "copas")}}selected{{/if}}>Copas ♥</option>
+          <option value="ouros" {{#if (eq systemData.atributos.naipe_regente "ouros")}}selected{{/if}}>Ouros ♦</option>
+          <option value="paus" {{#if (eq systemData.atributos.naipe_regente "paus")}}selected{{/if}}>Paus ♣</option>
+          <option value="espadas" {{#if (eq systemData.atributos.naipe_regente "espadas")}}selected{{/if}}>Espadas ♠</option>
+        </select>
+      </div>
+
+      <div class="stat-box" style="margin-top: 10px;">
+        <label style="color: #ffe135;">Aura de Cena</label>
+        <textarea name="system.atributos.aura_de_cena" class="zine-textarea" style="height: 60px; min-height: 60px;" placeholder="O que acontece quando ele chega?">{{systemData.atributos.aura_de_cena}}</textarea>
+      </div>
+
+      <div class="stat-box" style="margin-top: 10px;">
+        <label style="color: #00ffff;">Gatilho Passivo</label>
+        <textarea name="system.atributos.gatilho_passivo" class="zine-textarea" style="height: 60px; min-height: 60px;" placeholder="Ação ativada automaticamente...">{{systemData.atributos.gatilho_passivo}}</textarea>
+      </div>
+
+      <div class="stat-box" style="margin-top: 10px;">
+        <label style="color: #ff007f;">Pacto</label>
+        <textarea name="system.atributos.pacto" class="zine-textarea" style="height: 60px; min-height: 60px;" placeholder="A regra ou acordo macabro...">{{systemData.atributos.pacto}}</textarea>
+      </div>
+
+      <h3 class="glitch-title" style="margin-top: 15px;">Descrição</h3>
+      <textarea name="system.detalhes.descricao" class="zine-textarea" style="height: 80px; min-height: 80px;">{{systemData.detalhes.descricao}}</textarea>
+    </div>
+</form>

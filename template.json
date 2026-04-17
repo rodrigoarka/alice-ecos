@@ -11,21 +11,21 @@
                     "value": 1,
                     "min": 0,
                     "max": 4,
-                    "integridade": 0,
+                    "integridade": 3,
                     "naipe_regente": ""
                 },
                 "logica": {
                     "value": 1,
                     "min": 0,
                     "max": 4,
-                    "integridade": 0,
+                    "integridade": 3,
                     "naipe_regente": ""
                 },
                 "devaneio": {
                     "value": 1,
                     "min": 0,
                     "max": 4,
-                    "integridade": 0,
+                    "integridade": 3,
                     "naipe_regente": ""
                 }
             },
@@ -39,11 +39,22 @@
             }
         },
         "espelhado": {
-            "presenca": 3,
-            "naipe_regente": "",
-            "aura_de_cena": "",
-            "gatilho_passivo": "",
-            "pacto": ""
+            "detalhes": {
+                "descricao": "",
+                "nivel_ameaca": "",
+                "fraqueza": ""
+            },
+            "atributos": {
+                "presenca": 3,
+                "naipe_regente": "",
+                "aura_de_cena": "",
+                "gatilho_passivo": "",
+                "pacto": ""
+            },
+            "integridade": {
+                "value": 5,
+                "max": 5
+            }
         }
     },
     "Item": {

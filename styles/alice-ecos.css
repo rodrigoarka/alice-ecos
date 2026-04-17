@@ -976,3 +976,42 @@ select {
     font-size: inherit;
     /* --input-placeholder-color: aqua; */
 }
+
+select option {
+    color: var(--color-text-dark-primary);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+input[type="search"] {
+    width: calc(100% - 2px);
+    min-width: 20px;
+    height: var(--form-field-height);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1px 3px;
+    margin: 0;
+    color: var(--color-text-dark-primary);
+    font-family: inherit;
+    font-size: inherit;
+    text-align: inherit;
+    line-height: inherit;
+    border: 1px solid var(--color-border-light-tertiary);
+    border-radius: 3px;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.espelhado-portrait {
+
+    text-align: center;
+}
+
+.espelhado-portrait img {
+
+    border-radius: 50%;
+}

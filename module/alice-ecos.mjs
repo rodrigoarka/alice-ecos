@@ -290,6 +290,53 @@ class AliceItemSheet extends ItemSheet {
   }
 }
 
+class EspelhadoActorSheet extends ActorSheet {
+  static get defaultOptions() {
+    return foundry.utils.mergeObject(super.defaultOptions, {
+      classes: ["alice-ecos", "sheet", "actor", "espelhado-sheet"],
+      template: "systems/alice-ecos/templates/actor/espelhado-sheet.html",
+      width: 600,
+      height: 650,
+    });
+  }
+
+  getData() {
+    const context = super.getData();
+    context.systemData = context.actor.system;
+
+    // Pega todos os itens (Ataques/Poderes do monstro)
+    context.poderes = context.actor.items.map((i) => i);
+    return context;
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html);
+    if (!this.isEditable) return;
+
+    // Botão de deletar poder
+    html.find(".item-delete").click((ev) => {
+      ev.preventDefault();
+      const itemId = $(ev.currentTarget).closest(".item").data("itemId");
+      this.actor.deleteEmbeddedDocuments("Item", [itemId]);
+    });
+
+    // Botão de editar poder
+    html.find(".item-edit").click((ev) => {
+      ev.preventDefault();
+      const itemId = $(ev.currentTarget).closest(".item").data("itemId");
+      const item = this.actor.items.get(itemId);
+      if (item) item.sheet.render(true);
+    });
+
+    // Expandir descrição do poder (Efeito Sanfona)
+    html.find(".item-name").click((ev) => {
+      ev.preventDefault();
+      const li = $(ev.currentTarget).closest(".item");
+      li.find(".item-summary").slideToggle(200);
+    });
+  }
+}
+
 // 3. O GATILHO DE INICIALIZAÇÃO (O Hook 'init')
 // Este é o momento exato em que o País das Maravilhas acorda.
 Hooks.once("init", async function () {
@@ -304,4 +351,9 @@ Hooks.once("init", async function () {
   // Registramos as nossas fichas customizadas
   Actors.registerSheet("alice-ecos", AliceActorSheet, { makeDefault: true });
   Items.registerSheet("alice-ecos", AliceItemSheet, { makeDefault: true });
+
+  Actors.registerSheet("alice-ecos", EspelhadoActorSheet, {
+    types: ["espelhado"],
+    makeDefault: true,
+  });
 });

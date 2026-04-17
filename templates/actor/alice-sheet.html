@@ -1,5 +1,8 @@
 <form class="{{cssClass}} alice-sheet flexcol" autocomplete="off">
-  <header class="sheet-header echos-layout">
+  <header class="sheet-header echos-layout" style="
+    padding-bottom: 0;
+    border-bottom: none;
+">
     <div class="polaroid-mirror real">
       <img
         class="profile-img"
@@ -9,7 +12,7 @@
         alt="Retrato Real" />
     </div>
 
-    <div class="header-group real-fields">
+    <div class="header-group real-fields" >
       <label class="label-real">NOME REAL</label>
       <input
         name="name"
@@ -25,6 +28,10 @@
         value="{{systemData.detalhes.aparencia_real}}"
         placeholder="Um ser cinzento..."
         class="box-real" />
+
+      <label class="label-real">VIVÊNCIA:</label>
+      <input type="text" name="system.detalhes.vivencia" value="{{systemData.detalhes.vivencia}}" placeholder="Ex: Governanta Vitoriana"
+          class="box-alice" /> 
     </div>
 
     <div class="header-group alice-fields">
@@ -49,14 +56,7 @@
   </div>   
   
   </header>
-  <header class="sheet-header echos-layout" style="grid-template-columns: 140px 1fr;
-    grid-template-areas: 'asd alicefield';">  
-    <div class="header-group alice-fields">
-      <label class="label-vivencia">VIVÊNCIA:</label>
-      <input type="text" name="system.detalhes.vivencia" value="{{systemData.detalhes.vivencia}}" placeholder="Ex: Governanta Vitoriana"
-          class="box-alice" /> 
-    </div>
-  </header>
+
 
   <nav class="sheet-tabs tabs zine-nav" data-group="primary">
     <a class="item tab-echo" data-tab="atributos">OS ECOS (Atributos)</a>
@@ -106,6 +106,7 @@
             {{#each conceitosForma as |item id|}}
             <div class="item conceito-item flexcol" data-item-id="{{item._id}}">
               <div class="item-header flexrow">
+                <img style="max-width: 30px;" src="{{item.img}}" alt="100" sizes="" srcset="{{item.img}}">
                 <span class="item-name" title="Clique para ler as entrelinhas..."><i class="fas fa-caret-right"></i> {{item.name}}</span>
                 <div class="item-controls">
                   <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
@@ -171,6 +172,8 @@
             {{#each conceitosLogica as |item id|}}
             <div class="item conceito-item flexcol" data-item-id="{{item._id}}">
               <div class="item-header flexrow">
+                
+                <img style="max-width: 30px;" src="{{item.img}}" alt="100" sizes="" srcset="{{item.img}}">
                 <span class="item-name" title="Clique para ler as entrelinhas..."><i class="fas fa-caret-right"></i> {{item.name}}</span>
                 <div class="item-controls">
                   <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
@@ -235,7 +238,8 @@
             <div class="box-conceitos">
             {{#each conceitosDevaneio as |item id|}}
             <div class="item conceito-item flexcol" data-item-id="{{item._id}}">
-              <div class="item-header flexrow">
+              <div class="item-header flexrow">                
+                <img style="max-width: 30px;" src="{{item.img}}" alt="100" sizes="" srcset="{{item.img}}">
                 <span class="item-name" title="Clique para ler as entrelinhas..."><i class="fas fa-caret-right"></i> {{item.name}}</span>
                 <div class="item-controls">
                   <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
@@ -279,7 +283,8 @@
             <div class="item-container box-defeitos">
            {{#each conceitosDefeitos as |item id|}}
             <div class="item conceito-item flexcol" data-item-id="{{item._id}}">
-              <div class="item-header flexrow">
+              <div class="item-header flexrow">                
+                <img style="max-width: 30px;" src="{{item.img}}" alt="100" sizes="" srcset="{{item.img}}">
                 <span class="item-name" title="Clique para ler as entrelinhas..."><i class="fas fa-caret-right"></i> {{item.name}}</span>
                 <div class="item-controls">
                   <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
@@ -300,6 +305,8 @@
               {{#each itensDeBolso as |item id|}}
               <div class="item conceito-item flexcol" data-item-id="{{item._id}}">
                 <div class="item-header flexrow">
+                  
+                <img style="max-width: 30px;" src="{{item.img}}" alt="100" sizes="" srcset="{{item.img}}">
                   <span class="item-name"><i class="fas fa-box"></i> {{item.name}}</span>
                   <div class="item-controls">
                     <a class="item-control item-edit"><i class="fas fa-edit"></i></a>
